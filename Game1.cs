@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -21,6 +22,8 @@ namespace monogame_topic3
         Vector2 tribbleBrownSpeed;
         Vector2 tribbleCreamSpeed;
         Vector2 tribbleOrangeSpeed;
+
+        SoundEffect tribblecoo;
 
         Texture2D introTexture;
         Rectangle introRect;
@@ -73,6 +76,8 @@ namespace monogame_topic3
             tribbleCreamTexture = Content.Load<Texture2D>("tribbleCream");
             tribbleOrangeTexture = Content.Load<Texture2D>("tribbleOrange");
 
+            tribblecoo = Content.Load<SoundEffect>("tribble_coo");
+
             introTexture = Content.Load<Texture2D>("Untitled");
             file = Content.Load<SpriteFont>("File");
         }
@@ -93,35 +98,59 @@ namespace monogame_topic3
             {
                 tribbleGreyRect.X += (int)tribbleGreySpeed.X;
                 if (tribbleGreyRect.Right > _graphics.PreferredBackBufferWidth || tribbleGreyRect.X < 0)
+                {
+                    tribblecoo.Play();
                     tribbleGreySpeed.X *= -1;
+                }
 
                 tribbleGreyRect.Y += (int)tribbleGreySpeed.Y;
                 if (tribbleGreyRect.Bottom > _graphics.PreferredBackBufferHeight || tribbleGreyRect.Y < 0)
+                {
+                    tribblecoo.Play();
                     tribbleGreySpeed.Y *= -1;
+                }
 
                 tribbleBrownRect.X += (int)tribbleBrownSpeed.X;
                 if (tribbleBrownRect.Right > _graphics.PreferredBackBufferWidth || tribbleBrownRect.X < 0)
+                {
+                    tribblecoo.Play();
                     tribbleBrownSpeed.X *= -1;
+                }
 
                 tribbleBrownRect.Y += (int)tribbleBrownSpeed.Y;
                 if (tribbleBrownRect.Bottom > _graphics.PreferredBackBufferHeight || tribbleBrownRect.Y < 0)
+                {
+                    tribblecoo.Play();
                     tribbleBrownSpeed.Y *= -1;
+                }
 
                 tribbleCreamRect.X += (int)tribbleCreamSpeed.X;
                 if (tribbleCreamRect.Right > _graphics.PreferredBackBufferWidth || tribbleCreamRect.X < 0)
+                {
+                    tribblecoo.Play();
                     tribbleCreamSpeed.X *= -1;
+                }
 
                 tribbleCreamRect.Y += (int)tribbleCreamSpeed.Y;
                 if (tribbleCreamRect.Bottom > _graphics.PreferredBackBufferHeight || tribbleCreamRect.Y < 0)
+                {
+                    tribblecoo.Play();
                     tribbleCreamSpeed.Y *= -1;
+                }
 
                 tribbleOrangeRect.X += (int)tribbleOrangeSpeed.X;
                 if (tribbleOrangeRect.Right > _graphics.PreferredBackBufferWidth || tribbleOrangeRect.X < 0)
+                {
+                    tribblecoo.Play();
                     tribbleOrangeSpeed.X *= -1;
+                }
 
                 tribbleOrangeRect.Y += (int)tribbleOrangeSpeed.Y;
                 if (tribbleOrangeRect.Bottom > _graphics.PreferredBackBufferHeight || tribbleOrangeRect.Y < 0)
+                {
+                    tribblecoo.Play();
                     tribbleOrangeSpeed.Y *= -1;
+                }
             }
 
 
